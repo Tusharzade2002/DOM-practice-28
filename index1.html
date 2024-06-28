@@ -29,6 +29,9 @@
             margin: 40px  65px;
             height: 30px;
             width: 190px;
+            text-align: center;
+            font-size: medium;
+            font-weight: bolder;
         }
         .butn{
            padding: 10px;
@@ -47,13 +50,22 @@
 <body>
     <div class="container">
         <div class="input">
-            <input type="text" class="input-text"/>
-            <input type="text" class="input-text"/>
+            <input type="text" class="input-text" id="input-text-1"/>
+            <input type="text" class="input-text"id="input-text-2"/>
         </div>
-        <p class="result">
-                  Sum:0
-        </p>
-        <button class="butn">Calculate</button>
+        <p class="result" id="resultsum"></p>
+        <button onclick="clicked()" class="butn">Calculate</button>
     </div>
+    <script>
+         function clicked(){
+        const inputtext1 =document.getElementById("input-text-1");
+        const inputtext2 =document.getElementById("input-text-2");
+         
+        const Sum=parseInt(inputtext1.value) + parseInt(inputtext2.value)
+        const result=document.getElementById("resultsum")
+       
+        result.innerText=`Sum : ${Sum}`
+         }
+    </script>
 </body>
 </html>
