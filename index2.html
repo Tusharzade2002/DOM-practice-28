@@ -35,7 +35,7 @@
         }
         .butn{
            padding: 10px;
-           margin: 20px 15px;
+           margin: 20px auto;
             border-radius: 2px;
             background-color:cornsilk;
             border: none;
@@ -45,41 +45,27 @@
             font-weight:bolder;
             font-size: larger;
         }
-        .buttons{
-                    margin: auto;
-          }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="input">
-            <input type="text" class="input-text" id="input-text-1"/>
-            <input type="text" class="input-text"id="input-text-2"/>
+            <input type="text" class="input-text" id="input-text-1" onkeyup="result()"/>
+            <input type="text" class="input-text"id="input-text-2" onkeyup="result()"/>
         </div>
         <p class="result" id="resultsum"></p>
-        <div class="buttons">
         <button onclick="clicked()" class="butn">Calculate</button>
-        <button onclick="reset()" class="butn">Reset</button>
-    </div>
     </div>
     <script>
-         function clicked(){
-        const inputtext1 =document.getElementById("input-text-1");
-        const inputtext2 =document.getElementById("input-text-2");
-         
-        const Sum=parseInt(inputtext1.value) + parseInt(inputtext2.value)
-        const result=document.getElementById("resultsum")
-       
-        result.innerText=`Sum : ${Sum}`
-         }
-         function reset(){
-            const inputtext1 =document.getElementById("input-text-1");
-            inputtext1.value=""
-            const inputtext2 =document.getElementById("input-text-2");
-            inputtext2.value=""
+        function result(){
+            const inputtext1 = document.getElementById("input-text-1")
+            const inputtext2 = document.getElementById("input-text-2")
+            
+            const sum= parseInt(inputtext1.value || 0) + parseInt(inputtext2.value || 0);
             const result=document.getElementById("resultsum")
-            result.innerText=""
-         }
+            result.innerText=`Sum : ${sum}`
+        }
+     
     </script>
 </body>
 </html>
