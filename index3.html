@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            background-color: #4d4dff;
+            height: 250px;
+            width: 700px;
+            margin-top: 100px;
+            margin: auto;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .input-text{
+            margin: 40px  65px;
+            height: 30px;
+            width: 190px;
+            text-align: center;
+            font-size: medium;
+            font-weight: bolder;
+        }
+        .result{
+            text-align: center;
+            font-weight:bolder;
+            font-size: larger;
+        }
+        .heading{
+            text-align: center;
+        }
+        .input{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="heading">String Comparator</h1>
+        <div class="input">
+        <input type="text" class="input-text" id="input-text-1" onkeyup="result()"/>
+        <input type="text" class="input-text" id="input-text-2" onkeyup="result()"/>
+     </div>
+        <p class="result" id="match-result ">
+          
+        </p>
+    </div>
+    <script>
+        function result(){
+        const inputtext1 = document.getElementById("input-text-1") 
+        const inputtext2 = document.getElementById("input-text-2") 
+        const resultElement = document.getElementById("match-result")
+
+         if(inputtext1.value == inputtext2.value){
+               console.log("match"); 
+               resultElement.innerText =" match";
+         }else{
+               resultElement.innerText="Not Match";
+               console.log("not match");
+        }
+        }
+    </script>
+</body>
+</html>
